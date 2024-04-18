@@ -19,7 +19,7 @@ public class LoginTest extends Hooks {
         wait = new WebDriverWait(driver, 10);
     }
 
-    @Test(description = "This test verify")
+    @Test(description = "This test verify  the login with user name and password functionality. ")
     public void loginTest() throws InterruptedException {
  //       extentTest = extentReports.createTest("Login functionality test","Testing login functionality.");
         loginPage.clickLoginIcon();
@@ -28,7 +28,7 @@ public class LoginTest extends Hooks {
         loginPage.clickLoginButton();
         loginPage.getLoginDinoName();
         assertEquals("dino",loginPage.getLoginDinoName().getText());
-        ExtentTestNGITestListener.getTest().log(Status.INFO, "The system");
+        ExtentTestNGITestListener.getTest().log(Status.INFO, "The system ");
     }
     @Test
     public void negativeLoginTest1() throws InterruptedException {

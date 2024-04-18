@@ -44,9 +44,15 @@ public class HomepagePage extends BasePage {
 
 // Research after dropdown from A to Z.
     @FindBy(css = ".sort-products-select.form-control.form-control-sm")
-    private WebElement sortProductDropDown;
-    public WebElement getSortProductDropDown() {
-        return sortProductDropDown;
+    private WebElement sortProductDropdown;
+    public WebElement getSortProductDropdown() {
+        return sortProductDropdown;
+    }
+    @FindBy(css = "option[value='az']")
+    private WebElement optionAZ;
+
+    public WebElement getOptionAZ(){
+        return optionAZ;
     }
 
     // Add products to the favorite.

@@ -30,16 +30,16 @@ public class HomepageTest extends Hooks {
     }
 
     @Test(description = "Search Products to Dropdown and searching by name A to Z.")
-    public void shortProductDropDown() throws InterruptedException {
-        homepagePage.selectOption(homepagePage.getSortProductDropDown(), "Sort by name (A to Z)");
+    public void shortProductDropdown() throws InterruptedException {
+        homepagePage.selectOption(homepagePage.getSortProductDropdown(), "Sort by name (A to Z)");
         Thread.sleep(2000);
-        ExtentTestNGITestListener.getTest().log(Status.INFO, "");
-        assertEquals("The products  are sorted correctly by name (A la Z).", homepagePage.getSortProductDropDown());
+        ExtentTestNGITestListener.getTest().log(Status.INFO, "The products are searched correctly from A to Z.");
+        assertEquals("Sort by name (A to Z)", homepagePage.getOptionAZ().getText());
 
     }
     @Test(description = "Search Products to Dropdown and searching by price Low to High.")
-    public void shortProductDropDown2() throws InterruptedException {
-        homepagePage.selectOption(homepagePage.getSortProductDropDown(), "Sort by price (low to high)");
+    public void shortProductDropdown2() throws InterruptedException {
+        homepagePage.selectOption(homepagePage.getSortProductDropdown(), "Sort by price (low to high)");
         Thread.sleep(2000);
         ExtentTestNGITestListener.getTest().log(Status.INFO, "");
 

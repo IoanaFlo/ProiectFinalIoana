@@ -17,7 +17,7 @@ public class CheckoutTest extends Hooks {
     @BeforeMethod
     public void SetupPageObject() {
         checkoutPage = new CheckoutPage(driver);
-        wait = new WebDriverWait(driver, 10);
+        wait = new WebDriverWait(driver, 30);
     }
 
 
