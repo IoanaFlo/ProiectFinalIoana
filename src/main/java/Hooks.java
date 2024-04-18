@@ -1,22 +1,26 @@
-import org.junit.After;
-import org.junit.Before;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 public class Hooks {
 
     public WebDriver driver;
 
-    @Before
+    @BeforeMethod
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "/Users/dc/Documents/AutomationSolution/src/main/resources/chromedriver");
+
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.get("http://testfasttrackit.info/magento-test/");
+        driver.manage().window().maximize();
+        driver.get("https://fasttrackit-test.netlify.app/#/");
 
     }
 
-    @After
+    @AfterMethod
     public void tearDown() {
-        driver.quit();
-    }
+            driver.quit();
+        }
+
 }
