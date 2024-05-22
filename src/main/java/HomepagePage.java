@@ -14,8 +14,9 @@ public class HomepagePage extends BasePage {
         super(driver);
         wait = new WebDriverWait(driver, 30);
     }
-//    Searching in the search bar after 'mouse' keyword.
-       @FindBy(id = "input-search")
+
+    //    Searching in the search bar after 'mouse' keyword.
+    @FindBy(id = "input-search")
     private WebElement searchField;
 
     public void enterSearch() {
@@ -38,26 +39,52 @@ public class HomepagePage extends BasePage {
 
     @FindBy(linkText = "Practical Metal Mouse")
     private WebElement mouseLink2;
+
     public WebElement getMouseLink2() {
         return mouseLink2;
     }
 
-// Research after dropdown from A to Z.
+    // Select after dropdown from A to Z.
     @FindBy(css = ".sort-products-select.form-control.form-control-sm")
     private WebElement sortProductDropdown;
+
     public WebElement getSortProductDropdown() {
         return sortProductDropdown;
     }
+
     @FindBy(css = "option[value='az']")
     private WebElement optionAZ;
 
-    public WebElement getOptionAZ(){
+    public WebElement getOptionAZ() {
         return optionAZ;
     }
+
+    @FindBy(css = "option[value='za']")
+    private WebElement optionZA;
+
+    public WebElement getOptionZA() {
+        return optionZA;
+    }
+
+    @FindBy(css = "option[value='lohi']")
+    private WebElement optionLowToHigh;
+
+    public WebElement getOptionLowToHigh() {
+        return optionLowToHigh;
+    }
+
+    @FindBy(css = "option[value='hilo']")
+    private WebElement optionHighToLow;
+
+    public WebElement getOptionHighToLow() {
+        return optionHighToLow;
+    }
+
 
     // Add products to the favorite.
     @FindBy(css = ".svg-inline--fa.fa-heart.fa-w-16.fa-2x")
     private WebElement addToFavoriteButton;
+
     public void clickAddToFavoriteButton() {
         addToFavoriteButton.click();
     }
@@ -99,12 +126,68 @@ public class HomepagePage extends BasePage {
 
     @FindBy(css = ".svg-inline--fa.fa-undo.fa-w-16")
     private WebElement resetPageButton;
-    public void clickResetPageButton(){
+
+    public void clickResetPageButton() {
         resetPageButton.click();
     }
 
+    //    Research an item who don't exist and no message are displayed.
+    @FindBy(id = "input-search")
+    private WebElement searchField2;
 
+    public void enterSearch2() {
+        searchField2.sendKeys("photo");
+    }
 
+    @FindBy(css = ".btn.btn-light.btn-sm")
+    private WebElement searchButton2;
+
+    public void clickSearchButton2() {
+        searchButton2.click();
+    }
+
+    @FindBy(linkText = "No product are found.Try with another word.")
+    private WebElement pageMessageResearch;
+
+    public WebElement getPageMessageResearch(){
+        return pageMessageResearch;
+    }
+    @FindBy(linkText = "Practical Wooden Bacon")
+    private WebElement practicalWoodenBacon;
+
+    public void clickPracticalWoodenBacon() {
+        practicalWoodenBacon.click();
+    }
+    @FindBy(css = ".svg-inline--fa.fa-cart-plus.fa-w-18.fa-3x")
+    private WebElement addToCartButton;
+
+    public void clickAddToCartButton() {
+        addToCartButton.click();
+    }
+    @FindBy(css = ".svg-inline--fa.fa-shopping-cart.fa-w-18")
+    private WebElement cartIcon;
+
+    public void clickCartIcon() {
+        cartIcon.click();
+    }
+    @FindBy(css = ".svg-inline--fa.fa-trash.fa-w-14")
+    private WebElement deleteButton;
+
+    public void clickDeleteButton() {
+        deleteButton.click();
+    }
+    @FindBy(linkText = "How about adding some products in your cart? ")
+    private WebElement pageMessage;
+
+    public WebElement getPageMessage() {
+        return pageMessage;
+    }
+    @FindBy(linkText = "Your cart")
+    private WebElement cartPageTitle;
+
+    public WebElement getCartPageTitle() {
+        return cartPageTitle;
+    }
     public void selectOption(WebElement element, String option) {
         Select optionSelect = new Select(element);
         optionSelect.selectByVisibleText(option);

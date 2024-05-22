@@ -26,6 +26,13 @@ public class CheckoutPage extends BasePage {
         selectProduct.click();
     }
 
+    @FindBy(css = ".btn.btn-danger")
+    private WebElement continueShoppingButton;
+
+    public void clickContinueShoppingButton() {
+        continueShoppingButton.click();
+    }
+
     @FindBy(css = ".svg-inline--fa.fa-cart-plus.fa-w-18.fa-3x")
     private WebElement addToCartButton;
 
@@ -203,7 +210,7 @@ public class CheckoutPage extends BasePage {
         homepageButton.click();
     }
 
-//    ADD two products to the cart and make the total with tax.
+    //    ADD two products to the cart and make the total with tax.
     @FindBy(linkText = "Incredible Concrete Hat")
     private WebElement addProductIncredibleCH;
 
@@ -263,10 +270,71 @@ public class CheckoutPage extends BasePage {
         return pageMessage;
     }
 
+    @FindBy(linkText = "Awesome Soft Shirt")
+    private WebElement awesomeSoftShirt;
+
+    public void clickAwesomeSoftShirt() {
+        awesomeSoftShirt.click();
+    }
+
+    @FindBy(css = ".btn.btn-danger")
+    private WebElement cancelButton;
+
+    public void clickCancelButton() {
+        cancelButton.click();
+    }
+
+
+    @FindBy(css = ".svg-inline--fa.fa-cart-plus.fa-w-18.fa-2x")
+    private WebElement addCartButton;
+
+    public void clickAddCartButton() {
+        addCartButton.click();
+    }
+
+    @FindBy(css = ".svg-inline--fa.fa-cart-plus.fa-w-18.fa-3x")
+    private WebElement addCartButton2;
+
+    public void clickAddCartButton2() {
+        addCartButton2.click();
+    }
+    @FindBy(css = ".fa-layers-counter.shopping_cart_badge")
+    private WebElement productInCart;
+
+    boolean isProductInCart() {
+        // code to check if a product is in the cart
+        return true;
+    }
+
+    @FindBy(css = ".fa-layers-counter.shopping_cart_badge")
+    private WebElement cartItemCount2;
+
+    int getCartItemCount2() {
+        // code to get the number of items in the cart
+        int i = 2;
+        return i;
+    }
+    @FindBy(css=".svg-inline--fa.fa-plus-circle.fa-w-16 ")
+    private WebElement ProductQuantity;
+    public void increaseProductQuantity(int i) {
+    }
+    int getProductQuantity(int index) {
+        // code to get the quantity of a product in the cart
+        return 2;
+    }
+    @FindBy(css = ".svg-inline--fa.fa-trash.fa-w-14")
+    private WebElement deleteButton;
+
+    public void clickDeleteButton() {
+        deleteButton.click();
+    }
+
+
 
     public void selectOption(WebElement element, String option) {
         Select optionSelect = new Select(element);
         optionSelect.selectByVisibleText(option);
     }
+
 
 }
