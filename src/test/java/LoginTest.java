@@ -19,57 +19,57 @@ public class LoginTest extends Hooks {
         wait = new WebDriverWait(driver, 10);
     }
  //   Login with username and password functionality Test
-    @Test(description = "This test verify  the login with username and password functionality. ")
+    @Test(description = "This test verifies the login functionality with username and password.")
     public void loginTest() throws InterruptedException {
         loginPage.clickLoginIcon();
         loginPage.setUserName("dino");
         loginPage.setPassword("choochoo");
         loginPage.clickLoginButton();
         loginPage.getLoginDinoName();
-        ExtentTestNGITestListener.getTest().log(Status.INFO, "The login is successfully with thw correct username and password. ");
+        ExtentTestNGITestListener.getTest().log(Status.INFO, "The login is successful with the correct username and password.");
         assertEquals("dino", loginPage.getLoginDinoName().getText());
     }
   //  Login without username NegativeTest
-    @Test(description = "This test verify  the login without username")
+    @Test(description = "This test verifies the login functionality without a username")
     public void negativeLoginTest1() throws InterruptedException {
         loginPage.clickLoginIcon();
         loginPage.setPassword("choochoo");
         loginPage.clickLoginButton();
-        ExtentTestNGITestListener.getTest().log(Status.INFO, "The login is not successfully without username.");
+        ExtentTestNGITestListener.getTest().log(Status.INFO, "The login is not successful without a username.");
         assertEquals(loginPage.getLoginError().getText(), "Please fill in the username!");
 
     }
 //    Login with incorrect username NegativeTest
-    @Test(description = "This test verify  the login with incorrect username.")
+    @Test(description = "This test verifies the login functionality with an incorrect username.")
     public void negativeLoginTest2() throws InterruptedException {
         loginPage.clickLoginIcon();
         loginPage.setWrongUserName("ino");
         loginPage.setPassword("choochoo");
         loginPage.clickLoginButton();
-        ExtentTestNGITestListener.getTest().log(Status.INFO, "The login is not successfully with the wrong username.");
+        ExtentTestNGITestListener.getTest().log(Status.INFO, "The login is not successful with the wrong username.");
         assertEquals(loginPage.getLoginError().getText(), "Incorrect username or password!");
     }
  //   Login with incorrect password ,Negative Test
-    @Test(description = "This test verify  the login with incorrect password.")
+    @Test(description = "This test verifies the login functionality with an incorrect password.")
     public void negativeLoginTest3() throws InterruptedException {
         loginPage.clickLoginIcon();
         loginPage.setUserName("dino");
         loginPage.setIncorrectPassword("ochoo");
         loginPage.clickLoginButton();
-        ExtentTestNGITestListener.getTest().log(Status.INFO, "The login is not successfully with wrong password.");
+        ExtentTestNGITestListener.getTest().log(Status.INFO, "The login is not successful with the wrong password.");
         assertEquals(loginPage.getIncorrectPasswordError().getText(), "Incorrect username or password!");
     }
  //   Login without password Negative Test
-    @Test(description = "This test verify  the login without password.")
+    @Test(description = "This test verifies the login functionality without a password.")
     public void negativeLoginTest4() throws InterruptedException {
         loginPage.clickLoginIcon();
         loginPage.setUserName("dino");
         loginPage.clickLoginButton();
-        ExtentTestNGITestListener.getTest().log(Status.INFO, "The login is not successfully without password.");
+        ExtentTestNGITestListener.getTest().log(Status.INFO, "The login is not successful without a password.");
         assertEquals(loginPage.getLoginError().getText(), "Please fill in the password!");
     }
  //   Checking the functionality off login in the homepage
-    @Test(description = "Checking the functionality off login in the homepage. ")
+    @Test(description = "Checking the functionality of login on the homepage. ")
     public void homepageFunctionality() throws InterruptedException {
         loginPage.clickHomepageButton();
         loginPage.getHomepageTitle();
@@ -80,12 +80,12 @@ public class LoginTest extends Hooks {
         loginPage.clickLoginDinoName();
         loginPage.getUserNameIcon();
         loginPage.getAccountPageTitle();
-        ExtentTestNGITestListener.getTest().log(Status.INFO, "The login is  successfully and clicking the login icon works ok.");
+        ExtentTestNGITestListener.getTest().log(Status.INFO,  "The login is successful, and clicking the login icon works correctly.");
         assertEquals("Account", loginPage.getHomepageTitle().getText());
 
     }
  //   Checking the functionality off login in the homepage and refresh button Test
-    @Test(description = "Checking the functionality off login in the homepage and the refresh button ")
+    @Test(description = "Checking the functionality of logging in on the homepage, and using the refresh button.")
     public void homepageFunctionality2() throws InterruptedException {
         loginPage.clickHomepageButton();
         loginPage.getHomepageTitle();

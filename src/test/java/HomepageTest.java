@@ -31,39 +31,39 @@ public class HomepageTest extends Hooks {
         assertEquals("Practical Metal Mouse", homepagePage.getMouseLink2().getText());
     }
 //       Searching the Products to Dropdown and searching by name A to Z Test.
-    @Test(description = "Search Products to Dropdown and searching by name A to Z.")
+    @Test(description = "Search for products using the dropdown and sort by name from A to Z.")
     public void shortProductDropdown() throws InterruptedException {
         homepagePage.selectOption(homepagePage.getSortProductDropdown(), "Sort by name (A to Z)");
-        ExtentTestNGITestListener.getTest().log(Status.INFO, "The products are searched correctly from A to Z.");
+        ExtentTestNGITestListener.getTest().log(Status.INFO, "The products are correctly searched from A to Z.");
         assertEquals("Sort by name (A to Z)", homepagePage.getOptionAZ().getText());
 
     }
 //     Searching the Products to Dropdown and searching by name Z to A Test.
-    @Test(description = "Search Products to Dropdown and searching by name Z to A.")
+    @Test(description = "Search for products using the dropdown and sort by name from Z to A.")
     public void shortProductDropdown1() throws InterruptedException {
         homepagePage.selectOption(homepagePage.getSortProductDropdown(), "Sort by name (Z to A)");
-        ExtentTestNGITestListener.getTest().log(Status.INFO, "The products are searched correctly from Z to A.");
+        ExtentTestNGITestListener.getTest().log(Status.INFO, "The products are correctly searched from Z to A.");
         assertEquals("Sort by name (Z to A)", homepagePage.getOptionZA().getText());
 
     }
 //     Searching the Products to Dropdown and searching by price Low to High Test.
-    @Test(description = "Search Products to Dropdown and searching by price Low to High.")
+    @Test(description = "Searching for products using the dropdown and sort by price Low to High.")
     public void shortProductDropdown2() throws InterruptedException {
         homepagePage.selectOption(homepagePage.getSortProductDropdown(), "Sort by price (low to high)");
-        ExtentTestNGITestListener.getTest().log(Status.INFO, "The products are searched correctly by price from low to high.");
+        ExtentTestNGITestListener.getTest().log(Status.INFO, "The products are correctly searched by price from low to high.");
         assertEquals("Sort by price (low to high)", homepagePage.getOptionLowToHigh().getText());
 
     }
 //      Searching the Products to Dropdown and searching by price High to Low Test.
-    @Test(description = "Search Products to Dropdown and searching by price High to Low.")
+@Test(description = "Searching for products using the dropdown and sort by price High to Low.")
     public void shortProductDropdown3() throws InterruptedException {
         homepagePage.selectOption(homepagePage.getSortProductDropdown(), "Sort by price (high to low)");
-        ExtentTestNGITestListener.getTest().log(Status.INFO, "The products are searched correctly by price from high to low .");
+        ExtentTestNGITestListener.getTest().log(Status.INFO, "The products are correctly searched by price from high to low .");
         assertEquals("Sort by price (high to low)", homepagePage.getOptionHighToLow().getText());
 
     }
-//      Adding the products to favorite list ,Test.
-    @Test(description = "Add product to favorite list.")
+//      Adding the products to the favorite list ,Test.
+    @Test(description = "Add the product to the favorite list.")
     public void addProductToFavorite() throws InterruptedException {
         homepagePage.clickAddToFavoriteButton();
         homepagePage.getAddedToFavorite();
@@ -73,39 +73,39 @@ public class HomepageTest extends Hooks {
 
     }
     //      Adding the products to favorite list ,Test.
-    @Test(description = "Add product to favorite list and than cancel to the list.")
+    @Test(description = "Add the product to the favorite list, and then remove it from the favorite list.")
     public void addProductToFavoriteAndCancel() throws InterruptedException {
         homepagePage.clickAddToFavoriteButton();
         homepagePage.getAddedToFavorite();
         homepagePage.clickFavoriteIcon();
-        ExtentTestNGITestListener.getTest().log(Status.INFO, "The products are  correctly added to the favorite list.");
+        ExtentTestNGITestListener.getTest().log(Status.INFO, "The products have been correctly added from the favorite list.");
         homepagePage.clickCancelToFavoriteButton();
-        ExtentTestNGITestListener.getTest().log(Status.INFO, "The products are  correctly cancel to the favorite list.");
+        ExtentTestNGITestListener.getTest().log(Status.INFO, "The products have been correctly removed from the favorite list.");
         ExtentTestNGITestListener.getTest().log(Status.INFO, "Test passed successfully!");
         assertEquals("Wishlist", homepagePage.getPageTitleAdded().getText());
 
     }
 //      Checking the functionality off the homepage Test
-    @Test(description = "Checking the functionality off the homepage. ")
+    @Test(description = "Checking the functionality of the homepage. ")
     public void homepageFunctionality() throws InterruptedException {
         homepagePage.clickHomepageButton();
         homepagePage.getHomepageTitle();
-        ExtentTestNGITestListener.getTest().log(Status.INFO, "The homepage title is correctly displayed. ");
+        ExtentTestNGITestListener.getTest().log(Status.INFO, "The homepage title is displayed correctly.");
         assertEquals("Products", homepagePage.getHomepageTitle().getText());
 
     }
 //      Checking the functionality off the reset button Test.
-    @Test(description = "Checking the functionality off the reset button.")
+    @Test(description = "Checking the functionality of the reset button.")
     public void resetHomePage() throws InterruptedException {
         homepagePage.clickResetPageButton();
         homepagePage.getHomepageTitle();
-        ExtentTestNGITestListener.getTest().log(Status.INFO, "The homepage title is correctly displayed when click the reset button. ");
+        ExtentTestNGITestListener.getTest().log(Status.INFO, "The homepage title is correctly displayed when clicking the reset button. ");
         assertEquals("Products", homepagePage.getHomepageTitle().getText());
 
     }
 
     // Bug Test of search bar.
-    @Test(description = "Search a product after 'photo' keyword ,but the product don't exist and no text are displayed. ")
+    @Test(description = "Search for a product using the 'photo' keyword, but the product does not exist, and no text is displayed.")
     public void researchPhotoProducts() throws InterruptedException {
         homepagePage.enterSearch2();
         homepagePage.clickSearchButton2();
@@ -116,14 +116,14 @@ public class HomepageTest extends Hooks {
     }
 
     //    Add a product to cart and then cancel it Test.
-    @Test(description = "Add a product to cart and then cancel the product.")
+    @Test(description = "Add a product to cart and then cancel it.")
     public void addPracticalWoodenBacon() throws InterruptedException {
         homepagePage.clickPracticalWoodenBacon();
         homepagePage.clickAddToCartButton();
         homepagePage.clickCartIcon();
         homepagePage.clickDeleteButton();
         homepagePage.getPageMessage();
-        ExtentTestNGITestListener.getTest().log(Status.INFO,"The message of empty cart is displayed correctly! " );
+        ExtentTestNGITestListener.getTest().log(Status.INFO,"The message indicating an empty cart is correctly displayed." );
         ExtentTestNGITestListener.getTest().log(Status.INFO,"The test passed successfully!");
         assertEquals( "How about adding some products in your cart?",homepagePage.getPageMessage().getText());
     }
