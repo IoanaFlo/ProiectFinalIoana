@@ -185,7 +185,7 @@ public class HomepagePage extends BasePage {
     public void clickDeleteButton() {
         deleteButton.click();
     }
-    @FindBy(linkText = "How about adding some products in your cart?")
+    @FindBy(css = ".text-center.container")
     private WebElement pageMessage;
 
     public WebElement getPageMessage() {

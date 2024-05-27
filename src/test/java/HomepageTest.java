@@ -125,8 +125,7 @@ public class HomepageTest extends Hooks {
         homepagePage.getPageMessage();
         ExtentTestNGITestListener.getTest().log(Status.INFO,"The message of empty cart is displayed correctly! " );
         ExtentTestNGITestListener.getTest().log(Status.INFO,"The test passed successfully!");
-        assertEquals( "How about adding some products in your cart?", "How about adding some products in your cart?");
-
+        assertEquals( "How about adding some products in your cart?",homepagePage.getPageMessage().getText());
     }
 
 }
