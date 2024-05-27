@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">May 22, 2024 01:36:36 PM</span></a>
+<a href="#"><span class="badge badge-primary">May 27, 2024 11:03:30 AM</span></a>
 </li>
 </ul>
 </div>
@@ -79,9 +79,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">researchPhotoProducts</p>
+            <p class="name">addProductToCartTestAndCheckoutWithInvalidAddress</p>
             <p class="text-sm">
-              <span>1:36:38 PM</span> / <span>00:00:00:255</span>
+              <span>11:03:33 AM</span> / <span>00:00:00:816</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -89,23 +89,44 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">researchPhotoProducts</h5>
-<span class='badge badge-success'>05.22.2024 1:36:38 PM</span>
-<span class='badge badge-danger'>05.22.2024 1:36:38 PM</span>
-<span class='badge badge-default'>00:00:00:255</span>
+<h5 class="test-status text-fail">addProductToCartTestAndCheckoutWithInvalidAddress</h5>
+<span class='badge badge-success'>05.27.2024 11:03:33 AM</span>
+<span class='badge badge-danger'>05.27.2024 11:03:33 AM</span>
+<span class='badge badge-default'>00:00:00:816</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
-<div class="m-t-10 m-l-5">Search a product after 'photo' keyword ,but the product don't exist and no text are displayed. </div>
+<div class="m-t-10 m-l-5">Selecting a product and add it to the cart and then checkout with an invalid address.</div>
 </div>
 </div><div class="detail-body mt-4">
 <table class="table table-sm">
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>11:03:33 AM</td>
+        <td>
+          The product was successful  added to the cart.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>11:03:33 AM</td>
+        <td>
+          The added test was passed successfully!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>11:03:33 AM</td>
+        <td>
+          The order should not be proceed to checkout with an invalid address.
+        </td>
+      </tr>
+      <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>1:36:38 PM</td>
+        <td>11:03:33 AM</td>
         <td>
           Test Failed
         </td>
@@ -129,13 +150,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>May 22, 2024 01:36:36 PM</h3>
+<h3>May 27, 2024 11:03:30 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>May 22, 2024 01:36:39 PM</h3>
+<h3>May 27, 2024 11:03:34 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -186,10 +207,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='0%'><b>0</b> events passed</small></div>
+<div><small data-tooltip='25%'><b>1</b> events passed</small></div>
 <div>
-<small data-tooltip='100%'><b>1</b> events failed,
-<b data-tooltip='%'>0</b> others
+<small data-tooltip='25%'><b>1</b> events failed,
+<b data-tooltip='%'>2</b> others
 </small>
 </div>
 </div>
@@ -205,7 +226,7 @@
 </div></div>
 <script>
 var timeline = {
-"researchPhotoProducts":0.255
+"addProductToCartTestAndCheckoutWithInvalidAddress":0.816
 };
 </script>
 <div class="row">
@@ -231,11 +252,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 0,
+passEvents: 1,
 failEvents: 1,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 0
+infoEvents: 2
 };
 </script>        </div>
       </div>

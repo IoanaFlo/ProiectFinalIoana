@@ -139,6 +139,12 @@ public class CheckoutPage extends BasePage {
     public void enterAddress() {
         addressField.sendKeys("Strada Lalelelor,nr.12I,Cluj");
     }
+    @FindBy(id = "address")
+    private WebElement invalidAddressField;
+
+    public void enterInvalidAddress() {
+        addressField.sendKeys("a");
+    }
 
     @FindBy(css = ".text-center")
     private WebElement textCentre;

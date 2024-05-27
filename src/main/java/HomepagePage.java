@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class HomepagePage extends BasePage {
 
     public WebDriverWait wait;
+    public double expectedMessage;
+    public boolean actualMessage;
 
     public HomepagePage(WebDriver driver) {
 
@@ -88,6 +90,13 @@ public class HomepagePage extends BasePage {
     public void clickAddToFavoriteButton() {
         addToFavoriteButton.click();
     }
+    @FindBy(css = ".svg-inline--fa.fa-heart-broken.fa-w-16.fa-2x ")
+    private WebElement cancelToFavoriteButton;
+
+    public void clickCancelToFavoriteButton() {
+        cancelToFavoriteButton.click();
+    }
+
 
     @FindBy(css = ".fa-layers-counter.shopping_cart_badge")
     private WebElement addedToFavorite;
@@ -176,7 +185,7 @@ public class HomepagePage extends BasePage {
     public void clickDeleteButton() {
         deleteButton.click();
     }
-    @FindBy(linkText = "How about adding some products in your cart? ")
+    @FindBy(linkText = "How about adding some products in your cart?")
     private WebElement pageMessage;
 
     public WebElement getPageMessage() {
