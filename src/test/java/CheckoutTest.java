@@ -21,13 +21,13 @@ public class CheckoutTest extends Hooks {
     }
 
     //   Selecting a product and add it to the cart
-    @Test(description = "Selecting a product and add it to the cart")
+    @Test(description = "Selecting a product and adding it to the cart")
     public void addProductToCartTest() throws InterruptedException {
         checkoutPage.clickSelectProduct();
         checkoutPage.getPageTitle();
         assertEquals("Awesome Granite Chips", checkoutPage.getPageTitle().getText());
         checkoutPage.clickAddToCartButton();
-        ExtentTestNGITestListener.getTest().log(Status.INFO, "The product was successful added to the cart.");
+        ExtentTestNGITestListener.getTest().log(Status.INFO, "The product was successfully added to the cart.");
         ExtentTestNGITestListener.getTest().pass("The added test has passed successfully!");
 
     }
