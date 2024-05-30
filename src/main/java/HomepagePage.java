@@ -1,3 +1,4 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -200,6 +201,22 @@ public class HomepagePage extends BasePage {
     public void selectOption(WebElement element, String option) {
         Select optionSelect = new Select(element);
         optionSelect.selectByVisibleText(option);
+    }
+    @FindBy(linkText="Gorgeous Soft Pizza")
+    private WebElement gorgeousSoftPizza;
+    public void clickGorgeousSoftPizza(){
+        gorgeousSoftPizza.click();
+    }
+    @FindBy(css = ".text-muted")
+    private static WebElement pageTitle3;
+
+    public static WebElement getPageTitle3() {
+        return pageTitle3;
+    }
+    @FindBy(css="text-center.container")
+    private WebElement pageMessage3;
+    public static WebElement getPageMessage3() {
+        return driver.findElement(By.cssSelector("div.text-center.container"));
     }
 
 }

@@ -127,5 +127,20 @@ public class HomepageTest extends Hooks {
         ExtentTestNGITestListener.getTest().log(Status.INFO,"The test passed successfully!");
         assertEquals( "How about adding some products in your cart?",homepagePage.getPageMessage().getText());
     }
+    // Add product to the cart end use the reset button functionality.
+    @Test(description = "Selecting a product and adding it to the cart, and check the functionality of the reset button.")
+    public void addGorgeousSoftPizzaAndResetButton() throws InterruptedException{
+        homepagePage.clickGorgeousSoftPizza();
+        homepagePage.clickAddToCartButton();
+        homepagePage.clickCartIcon();
+        ExtentTestNGITestListener.getTest().log(Status.INFO,"The product was correctly added to the cart." );
+        homepagePage.clickResetPageButton();
+        ExtentTestNGITestListener.getTest().log(Status.INFO,"The product was correctly added to the cart." );
+        ExtentTestNGITestListener.getTest().log(Status.INFO, "The expected result is "+ HomepagePage.getPageMessage3().getText());
+        ExtentTestNGITestListener.getTest().log(Status.INFO, "The actual result is " + HomepagePage.getPageMessage3().getText());
+        assertEquals(HomepagePage.getPageMessage3().getText(),"How about adding some products in your cart?");
+
+    }
+
 
 }

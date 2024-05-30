@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">May 27, 2024 03:30:24 PM</span></a>
+<a href="#"><span class="badge badge-primary">May 30, 2024 12:46:43 PM</span></a>
 </li>
 </ul>
 </div>
@@ -79,9 +79,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">addProductToCartTestAndCheckoutWithInvalidAddress</p>
+            <p class="name">addQuantityAndDeleteOne</p>
             <p class="text-sm">
-              <span>3:30:26 PM</span> / <span>00:00:00:672</span>
+              <span>12:46:46 PM</span> / <span>00:00:01:438</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -89,15 +89,15 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">addProductToCartTestAndCheckoutWithInvalidAddress</h5>
-<span class='badge badge-success'>05.27.2024 3:30:26 PM</span>
-<span class='badge badge-danger'>05.27.2024 3:30:27 PM</span>
-<span class='badge badge-default'>00:00:00:672</span>
+<h5 class="test-status text-fail">addQuantityAndDeleteOne</h5>
+<span class='badge badge-success'>05.30.2024 12:46:46 PM</span>
+<span class='badge badge-danger'>05.30.2024 12:46:47 PM</span>
+<span class='badge badge-default'>00:00:01:438</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
-<div class="m-t-10 m-l-5">Select a product, add it to the cart, and then proceed to checkout with an invalid address.</div>
+<div class="m-t-10 m-l-5">Add different quantities of products and then delete the firestone.</div>
 </div>
 </div><div class="detail-body mt-4">
 <table class="table table-sm">
@@ -105,28 +105,28 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>3:30:26 PM</td>
+        <td>12:46:47 PM</td>
         <td>
-          The product was successfully added to the cart.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:30:26 PM</td>
-        <td>
-          The added test passed successfully!
+          The quantity of the first product is 2
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>3:30:27 PM</td>
+        <td>12:46:47 PM</td>
         <td>
-          The order should not proceed to checkout with an invalid address.
+          The expected result is 1 product left in the cart. 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:46:47 PM</td>
+        <td>
+          The actual result is no product name in the cart
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>3:30:27 PM</td>
+        <td>12:46:47 PM</td>
         <td>
           Test Failed
         </td>
@@ -150,13 +150,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>May 27, 2024 03:30:24 PM</h3>
+<h3>May 30, 2024 12:46:43 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>May 27, 2024 03:30:27 PM</h3>
+<h3>May 30, 2024 12:46:48 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -207,10 +207,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='25%'><b>1</b> events passed</small></div>
+<div><small data-tooltip='0%'><b>0</b> events passed</small></div>
 <div>
 <small data-tooltip='25%'><b>1</b> events failed,
-<b data-tooltip='%'>2</b> others
+<b data-tooltip='%'>3</b> others
 </small>
 </div>
 </div>
@@ -226,7 +226,7 @@
 </div></div>
 <script>
 var timeline = {
-"addProductToCartTestAndCheckoutWithInvalidAddress":0.672
+"addQuantityAndDeleteOne":1.438
 };
 </script>
 <div class="row">
@@ -252,11 +252,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 1,
+passEvents: 0,
 failEvents: 1,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 2
+infoEvents: 3
 };
 </script>        </div>
       </div>

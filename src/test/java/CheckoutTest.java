@@ -152,8 +152,8 @@ public class CheckoutTest extends Hooks {
 
     // Test3
 
-    @Test(description = "We calculate the total for the products Licensed Steel Gloves and Incredible Concrete Hat, and the refresh button functionality.")
-    public void totalPriceResultTestAndRefreshButton() throws InterruptedException {
+    @Test(description = "We calculate the total for the products Licensed Steel Gloves and Incredible Concrete Hat, and the reset button functionality.")
+    public void totalPriceResultTestAndResetButton() throws InterruptedException {
         checkoutPage.clickAddProductLicensedSteelGlovesToCartLink();
         checkoutPage.clickAddProductLicensedSteelGlovesToCartButton();
         checkoutPage.clickHomepageButton();
@@ -167,10 +167,10 @@ public class CheckoutTest extends Hooks {
         ExtentTestNGITestListener.getTest().log(Status.INFO, "The expected total is:" + expectedTotal);
         ExtentTestNGITestListener.getTest().log(Status.INFO, "The actual total is:" + checkoutPage.totalPrice2());
         assertEquals(checkoutPage.totalPrice2(), expectedTotal);
-        checkoutPage.clickRefreshButton();
+        checkoutPage.clickResetButton();
         ExtentTestNGITestListener.getTest().log(Status.INFO, "The expected result is " + checkoutPage.getPageTitle());
-        ExtentTestNGITestListener.getTest().log(Status.INFO, "The actual result is " + checkoutPage.getPageMessage());
-        assertEquals("How about adding some products in your cart?", checkoutPage.getPageMessage());
+        ExtentTestNGITestListener.getTest().log(Status.INFO, "The actual result is " + checkoutPage.getPageMessage2());
+        assertEquals(checkoutPage.getPageMessage2().getText(),"How about adding some products in your cart?");
 
     }
     // Canceling product to the cart Test
@@ -193,7 +193,7 @@ public class CheckoutTest extends Hooks {
         // Add first product to the cart
         checkoutPage.clickAddCartButton();
         checkoutPage.clickCartIcon();
-        assertTrue(checkoutPage.isProductInCart(), "Product should be in the cart after adding.");
+        assertTrue(checkoutPage.isProductInCart(), "The product should be in the cart after adding.");
         // Navigate back to homepage and add another product
         checkoutPage.clickHomepageButton();
         checkoutPage.clickAddCartButton();
@@ -229,9 +229,8 @@ public class CheckoutTest extends Hooks {
         checkoutPage.enterFirstName();
         checkoutPage.enterLastName();
         checkoutPage.enterInvalidAddress();
-        ExtentTestNGITestListener.getTest().log(Status.INFO, "The order should not proceed to checkout with an invalid address.");
+        ExtentTestNGITestListener.getTest().log(Status.INFO, "The order does not proceed to checkout with an invalid address.");
         assertEquals( "Invalid address message",checkoutPage.getPageTitleOrderSummary().getText());
-
 
 
     }

@@ -84,9 +84,9 @@ public class LoginTest extends Hooks {
         assertEquals("Account", loginPage.getHomepageTitle().getText());
 
     }
- //   Checking the functionality off login in the homepage and refresh button Test
-    @Test(description = "Checking the functionality of logging in on the homepage, and using the refresh button.")
-    public void homepageFunctionality2() throws InterruptedException {
+ //   Checking the functionality off login in the homepage and reset button Test
+    @Test(description =" Checking the functionality of logging in on the homepage and the reset button functionality.")
+    public void homepageFunctionalityAndReset() throws InterruptedException {
         loginPage.clickHomepageButton();
         loginPage.getHomepageTitle();
         loginPage.clickLoginIcon();
@@ -96,8 +96,10 @@ public class LoginTest extends Hooks {
         loginPage.clickLoginDinoName();
         loginPage.getUserNameIcon();
         loginPage.getAccountPageTitle();
+        ExtentTestNGITestListener.getTest().log(Status.INFO,  "The login is successful, and clicking the reset button correctly displays the login homepage .");
         assertEquals("Account", loginPage.getHomepageTitle().getText());
 
     }
+
 
 }
