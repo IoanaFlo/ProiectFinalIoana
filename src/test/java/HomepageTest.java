@@ -1,4 +1,6 @@
 import com.aventstack.extentreports.Status;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -6,6 +8,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.AssertJUnit.assertTrue;
 import static org.testng.internal.junit.ArrayAsserts.assertArrayEquals;
 
 @Listeners(ExtentTestNGITestListener.class)
@@ -85,6 +88,18 @@ public class HomepageTest extends Hooks {
         assertEquals("Wishlist", homepagePage.getPageTitleAdded().getText());
 
     }
+    //  Add product to the favorite and check the reset functionality.
+    @Test(description = "Add the product to the favorite list, and then remove it from the favorite list.")
+    public void addProductToFavoriteAndReset() throws InterruptedException {
+        homepagePage.clickAddToFavoriteButton();
+        homepagePage.getAddedToFavorite();
+        homepagePage.clickFavoriteIcon();
+        ExtentTestNGITestListener.getTest().log(Status.INFO, "The products have been correctly added from the favorite list.");
+        homepagePage.clickResetPageButton();
+        assertEquals("Wishlist", homepagePage.getPageTitleAdded().getText());
+
+    }
+
 //      Checking the functionality off the homepage Test
     @Test(description = "Checking the functionality of the homepage. ")
     public void homepageFunctionality() throws InterruptedException {
@@ -140,6 +155,14 @@ public class HomepageTest extends Hooks {
         ExtentTestNGITestListener.getTest().log(Status.INFO, "The actual result is " + HomepagePage.getPageMessage3().getText());
         assertEquals(HomepagePage.getPageMessage3().getText(),"How about adding some products in your cart?");
 
+    }
+ //    This test demonstrates a bug related to the product image not being displayed.
+    @Test(description = "This test verifies the presence and visibility of the product image for 'Awesome Granite Chips' on the website.")
+    public void testProductImageDisplayed() throws InterruptedException{
+       homepagePage.clickSelectProduct();
+       homepagePage.getProductImage();
+        ExtentTestNGITestListener.getTest().log(Status.INFO,"The image of product is not displayed." );
+        assertEquals(homepagePage.getProductImage().isDisplayed(),"The product image is not displayed");
     }
 
 

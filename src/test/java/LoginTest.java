@@ -29,7 +29,7 @@ public class LoginTest extends Hooks {
         ExtentTestNGITestListener.getTest().log(Status.INFO, "The login is successful with the correct username and password.");
         assertEquals("dino", loginPage.getLoginDinoName().getText());
     }
-  //  Login without username NegativeTest
+  //  Login without username, NegativeTest
     @Test(description = "This test verifies the login functionality without a username")
     public void negativeLoginTest1() throws InterruptedException {
         loginPage.clickLoginIcon();
@@ -39,7 +39,7 @@ public class LoginTest extends Hooks {
         assertEquals(loginPage.getLoginError().getText(), "Please fill in the username!");
 
     }
-//    Login with incorrect username NegativeTest
+//    Login with incorrect username, NegativeTest
     @Test(description = "This test verifies the login functionality with an incorrect username.")
     public void negativeLoginTest2() throws InterruptedException {
         loginPage.clickLoginIcon();
@@ -59,7 +59,7 @@ public class LoginTest extends Hooks {
         ExtentTestNGITestListener.getTest().log(Status.INFO, "The login is not successful with the wrong password.");
         assertEquals(loginPage.getIncorrectPasswordError().getText(), "Incorrect username or password!");
     }
- //   Login without password Negative Test
+ //   Login without password, Negative Test
     @Test(description = "This test verifies the login functionality without a password.")
     public void negativeLoginTest4() throws InterruptedException {
         loginPage.clickLoginIcon();

@@ -218,5 +218,19 @@ public class HomepagePage extends BasePage {
     public static WebElement getPageMessage3() {
         return driver.findElement(By.cssSelector("div.text-center.container"));
     }
+    // Find the image element of the product "Awesome Granite Chips"
+    @FindBy(css=".product-image")
+    WebElement productImage;
+    public WebElement getProductImage(){
+        return productImage;
+    }
+    @FindBy(linkText = "Awesome Granite Chips")
+    private WebElement selectProduct;
+
+    public void clickSelectProduct() {
+        selectProduct.click();
+    }
+
+
 
 }
