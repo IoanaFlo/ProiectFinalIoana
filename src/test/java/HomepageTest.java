@@ -156,12 +156,12 @@ public class HomepageTest extends Hooks {
         assertEquals(HomepagePage.getPageMessage3().getText(),"How about adding some products in your cart?");
 
     }
- //    This test demonstrates a bug related to the product image not being displayed.
+ //    This test demonstrates the product image is being displayed.
     @Test(description = "This test verifies the presence and visibility of the place holder image for 'Awesome Granite Chips' on the website.")
     public void testProductImageDisplayed() throws InterruptedException{
        homepagePage.clickSelectProduct();
        homepagePage.getProductImage();
-        ExtentTestNGITestListener.getTest().log(Status.INFO,"The image of product is not displayed." );
+        ExtentTestNGITestListener.getTest().log(Status.INFO,"The image of product is correctly displayed." );
         assertEquals(true,homepagePage.getProductImage().isDisplayed());
     }
 
