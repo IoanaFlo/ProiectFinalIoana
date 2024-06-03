@@ -231,6 +231,11 @@ public class HomepagePage extends BasePage {
         selectProduct.click();
     }
 
+    @FindBy(css=".navbar-text")
+    WebElement helloGuestTitle;
+    public WebElement getHelloGuestTitle(){
+        return helloGuestTitle;
+    }
 
 
 }

@@ -115,7 +115,7 @@ public class HomepageTest extends Hooks {
         homepagePage.clickResetPageButton();
         homepagePage.getHomepageTitle();
         ExtentTestNGITestListener.getTest().log(Status.INFO, "The homepage title is correctly displayed when clicking the reset button. ");
-        assertEquals("Products", homepagePage.getHomepageTitle().getText());
+        assertEquals("Hello guest!", homepagePage.getHelloGuestTitle().getText());
 
     }
 
