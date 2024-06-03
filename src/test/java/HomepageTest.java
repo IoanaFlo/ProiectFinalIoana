@@ -109,7 +109,7 @@ public class HomepageTest extends Hooks {
         assertEquals("Products", homepagePage.getHomepageTitle().getText());
 
     }
-//      Checking the functionality off the reset button Test.
+//      Checking the functionality off the reset button Test
     @Test(description = "Checking the functionality of the reset button.")
     public void resetHomePage() throws InterruptedException {
         homepagePage.clickResetPageButton();
