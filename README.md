@@ -1,6 +1,6 @@
                                       Prezentarea Proiectului Final:Costin Ioana
 
-    Prezentare Generală a Proiectului
+     Prezentare Generală a Proiectului
   Acest proiect este dedicat automatizării testării unei aplicații web de tip e-commerce. Principalul obiectiv este de a asigura fiabilitatea și funcționalitatea diferitelor interacțiuni ale utilizatorilor în cadrul aplicației, cum ar fi autentificarea, căutarea produselor, adăugarea articolelor în coș și sortarea listelor de produse.
  
     Caracteristici
