@@ -33,6 +33,24 @@ public class HomepageTest extends Hooks {
         assertEquals("Refined Frozen Mouse", homepagePage.getMouseLink().getText());
         assertEquals("Practical Metal Mouse", homepagePage.getMouseLink2().getText());
     }
+    //    Searching in the search bar after 'Chips' keyword Test.
+    @Test(description = "Searching in the search bar after 'Chips' keyword ")
+    public void searchAfterChipsTest() throws InterruptedException {
+        homepagePage.enterSearch1();
+        homepagePage.clickSearch();
+        ExtentTestNGITestListener.getTest().log(Status.INFO, "Search after 'Chips' keyword initiated");
+        ExtentTestNGITestListener.getTest().log(Status.INFO, "We found Awesome 'Granite Chips product'" );
+        assertEquals("Awesome Granite Chips", homepagePage.getChipsLink().getText());
+    }
+    //    Searching in the search bar after 'shirt' keyword Test.
+    @Test(description = "Searching in the search bar after 'shirt' keyword ")
+    public void searchAfterShirtTest() throws InterruptedException {
+        homepagePage.enterSearch3();
+        homepagePage.clickSearch();
+        ExtentTestNGITestListener.getTest().log(Status.INFO, "Search after 'shirt' keyword initiated");
+        ExtentTestNGITestListener.getTest().log(Status.INFO, "We found Awesome 'Awesome Soft Shirt' product" );
+        assertEquals("Awesome Soft Shirt", homepagePage.getShirtLink3().getText());
+    }
 //       Searching the Products to Dropdown and searching by name A to Z Test.
     @Test(description = "Search for products using the dropdown and sort by name from A to Z.")
     public void shortProductDropdown() throws InterruptedException {

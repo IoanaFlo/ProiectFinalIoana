@@ -25,6 +25,18 @@ public class HomepagePage extends BasePage {
     public void enterSearch() {
         searchField.sendKeys("mouse");
     }
+    @FindBy(id = "input-search")
+    private WebElement searchField1;
+
+    public void enterSearch1() {
+        searchField1.sendKeys("Chips");
+    }
+    @FindBy(id = "input-search")
+    private WebElement searchField3;
+
+    public void enterSearch3() {
+        searchField3.sendKeys("shirt");
+    }
 
     @FindBy(css = ".btn.btn-light.btn-sm")
     private WebElement searchButton;
@@ -32,7 +44,18 @@ public class HomepagePage extends BasePage {
     public void clickSearch() {
         searchButton.click();
     }
+    @FindBy(linkText = "Awesome Soft Shirt")
+    private WebElement shirtLink3;
 
+    public WebElement getShirtLink3() {
+        return shirtLink3;
+    }
+    @FindBy(linkText = "Awesome Granite Chips")
+    private WebElement chipsLink;
+
+    public WebElement getChipsLink() {
+        return chipsLink;
+    }
     @FindBy(linkText = "Refined Frozen Mouse")
     private WebElement mouseLink;
 
