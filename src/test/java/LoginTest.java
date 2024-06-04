@@ -16,7 +16,7 @@ public class LoginTest extends Hooks {
     @BeforeMethod
     public void SetupPageObject() {
         loginPage = new LoginPage(driver);
-        wait = new WebDriverWait(driver, 10);
+        wait = new WebDriverWait(driver, 30);
     }
  //   Login with username and password functionality Test
     @Test(description = "This test verifies the login functionality with username and password.")

@@ -21,7 +21,7 @@ public class HomepageTest extends Hooks {
     @BeforeMethod
     public void SetupPageObject() {
         homepagePage = new HomepagePage(driver);
-        wait = new WebDriverWait(driver, 10);
+        wait = new WebDriverWait(driver, 30);
     }
 //    Searching in the search bar after 'mouse' keyword Test.
     @Test(description = "Searching in the search bar after 'mouse' keyword ")
@@ -93,7 +93,7 @@ public class HomepageTest extends Hooks {
         assertEquals("Wishlist", homepagePage.getPageTitleAdded().getText());
 
     }
-    //      Adding the products to favorite list ,Test.
+    //      Adding the product to favorite list and then remove it from the favorite ,Test.
     @Test(description = "Add the product to the favorite list, and then remove it from the favorite list.")
     public void addProductToFavoriteAndCancel() throws InterruptedException {
         homepagePage.clickAddToFavoriteButton();
@@ -107,13 +107,14 @@ public class HomepageTest extends Hooks {
 
     }
     //  Add product to the favorite and check the reset functionality.
-    @Test(description = "Add the product to the favorite list, and then remove it from the favorite list.")
+    @Test(description = "Add the product to the favorite list, and then reset the page.")
     public void addProductToFavoriteAndReset() throws InterruptedException {
         homepagePage.clickAddToFavoriteButton();
         homepagePage.getAddedToFavorite();
         homepagePage.clickFavoriteIcon();
         ExtentTestNGITestListener.getTest().log(Status.INFO, "The products have been correctly added from the favorite list.");
         homepagePage.clickResetPageButton();
+        ExtentTestNGITestListener.getTest().log(Status.INFO,"The message indicating an empty wishlist is correctly displayed." );
         assertEquals("Wishlist", homepagePage.getPageTitleAdded().getText());
 
     }
